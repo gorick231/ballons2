@@ -1,0 +1,55 @@
+.footer
+   padding: 8rem
+   background: #333333
+   @include respond(tab-land)
+      padding: 4rem
+   @include respond(tab-port)
+      padding: 2rem
+   &__logo
+      width: 12rem
+      @include respond(tab-port)
+         width: 10rem
+   &__list
+      list-style: none
+      text-align: center
+   &__item
+      display: inline-block
+      &:not(:last-child)
+         margin-right: 5rem
+         @include respond(tab-land)
+            margin-right: 3rem
+         @include respond(tab-port)
+            margin-bottom: 2rem
+            margin-right: 2rem
+   &__link
+      &:link, &:visited
+         color: $color-white
+         text-decoration: none
+         text-transform: uppercase
+         font-weight: 300
+         font-size: $font-size-paragraph
+         line-height: 1.9rem
+         letter-spacing: .2rem
+         display: inline-block
+         transition: all .4s
+         backface-visibility: hidden
+      &:active, &:hover
+         transform: rotate(5deg) scale(1.2)
+         color: $color-brown-dark
+         text-shadow: $shadow-h2
+/*    height: 35vh
+   background: #333333
+   position: relative
+   &__logo
+      height: 15rem
+      width: 12rem
+      position: absolute
+      top: 40%
+      left: 50%
+      transform: translate(-50%, -50%)
+   &__nav
+      position: absolute
+      top: 80%
+      left: 50%
+      transform: translate(-50%, -50%) */
+

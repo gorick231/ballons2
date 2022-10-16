@@ -1,0 +1,14 @@
+.adventure-card
+   background: rgba($color-white, 0.8)
+   border-radius: .5rem
+   padding: 2.5rem
+   box-shadow: $box-shadow
+   transition: .2s all //Добавляет плавности анимации и время
+   &:hover
+      transform: translateY(-1.5rem) scale(1.03)//Приподнимает карточку и увеличивает
+   &__icon
+      font-size: 6.3rem
+      background: linear-gradient(90.05deg, rgba($color-brown-light, 0.7) 0.03%, rgba($color-brown-dark, 0.7) 99.94%)
+      -webkit-background-clip: text  //background уходит по текст
+      color: transparent //делает буквы прозрачными, в итоге виден background
+      display: inline-block

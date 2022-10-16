@@ -1,0 +1,100 @@
+.booking
+   height: 50rem
+   background: linear-gradient(113deg, rgba(255,255,255,0.804359243697479) 0%, rgba(255,255,255,0.804359243697479) 57%, rgba(186,133,84,0.8071603641456583) 57%, rgba(161,79,3,0.8071603641456583) 100%), url(../img/bkg-form.jpg) center / cover no-repeat
+   box-shadow: $box-shadow
+   border-radius: .5rem
+   overflow: hidden
+   @include respond(tab-port)
+      background: linear-gradient(113deg, rgba(255,255,255,0.804359243697479) 0%, rgba(255,255,255,0.804359243697479) 101%, rgba(186,133,84,0.8071603641456583) 57%, rgba(161,79,3,0.8071603641456583) 100%), url(../img/bkg-form.jpg) center / cover no-repeat
+.form
+   width: 70%
+   padding-top: 5rem
+   padding-left: 5rem
+   @include respond(tab-port)
+      padding-top: 3rem
+      padding-left: 5rem
+      width: 100%
+   &__group:not(:last-child)
+      margin-bottom: 2rem
+      @include respond(tab-land)
+         margin-bottom: 0
+      @include respond(tab-port)
+         margin-bottom: 1rem
+   &__group:nth-child(4)
+      margin-bottom: 3rem
+   &__input
+      font-weight: 400
+      font-size: $font-size-paragraph
+      letter-spacing: .2rem
+      line-height: 1.9rem
+      color: $color-black
+      background: $color-white
+      border-radius: .3rem
+      padding: 2rem 0 2rem 2rem
+      border: none
+      border-bottom: .4rem solid transparent
+      width: 75%
+      @include respond(tab-land)
+         width: 65%
+      @include respond(tab-port)
+         width: 90%
+         box-shadow: $box-shadow
+      &:focus
+         outline: none //при нажатии на окно, нет появления рамки
+         border-bottom: .4rem solid #29af24 // при нажатии на окно появляется внизу рамка
+         box-shadow: $box-shadow
+      &:focus:invalid // при неправильном вводе данных появляться красная рамка снизу
+         border-bottom: .4rem solid #bd2727
+   &__input:placeholder-shown + &__label // обращение к соседнему элекменту label тега input, чтобы показать или скрыть label
+      opacity: 0
+      visability: hidden
+      transform: translateY(-2rem) //чтобы текст выезжал сверху
+   &__label
+      font-weight: 400
+      font-size: $font-size-paragraph
+      line-height: 1.9rem
+      letter-spacing: .2rem
+      color: $color-gray
+      display: block
+      margin: 1rem 0 0 1.5rem
+      transition: .4s all //плавное появление текста
+      &-radio
+         position: relative
+         padding-left: 4rem 
+   &__group-radio
+      display: inline-block
+      &:not(:last-child)
+         margin-right: 2rem
+      @include respond(tab-land)
+         display: block
+         margin-right: 0rem
+         &:not(:last-child)
+            margin-bottom: 2rem
+   &__input-radio
+      cursor: pointer //свойство при наведении на input появляеться рука
+      display: none
+   &__button-radio
+      height: 3rem
+      width: 3rem
+      border-radius: 50%
+      border: .5rem solid $color-brown-light
+      display: block
+      position: absolute
+      left: -.1rem
+      top: -.4rem
+      &::after
+         content: ""
+         display: block
+         height: 1.5rem
+         width: 1.5rem
+         border-radius: 50%
+         background: $color-brown-light
+         position: absolute
+         left: 50%
+         top: 50%
+         transform: translate(-50%, -50%)
+         opacity: 0
+         transition: .2s all
+   &__input-radio:checked ~ &__label-radio &__button-radio::after
+      opacity: 1
+

@@ -1,0 +1,19 @@
+.menu
+   list-style-type: none
+   &__li
+      display: inline-block
+      &:not(:last-child)
+         margin-right: 5rem
+   &__link
+      text-decoration: none
+      font-weight: 300
+      font-size: $font-size-paragraph
+      line-height: 1.9rem
+      letter-spacing: .2rem
+      color: $color-white
+      display: inline-block
+      transition: all .4s
+      backface-visibility: hidden
+      &:hover
+         color: $color-brown-dark
+         transform: rotate(0.02turn) scale(1.2)
